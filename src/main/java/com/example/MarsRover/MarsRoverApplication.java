@@ -34,6 +34,10 @@ public class MarsRoverApplication implements CommandLineRunner {
                 MarsRover rover = roverController.getRover(i / 2);
                 System.out.println("Final Coordinate for Rover " + (i / 2 + 1) + ": " + rover.getX() + ", " + rover.getY());
                 System.out.println("Final Direction for Rover " + (i / 2 + 1) + ": " + rover.getDirection());
+//                if (roverController.isCollisionExecution()) {
+//                    System.out.println("Further execution stopped due to collision.");
+//                    break;  // Stop processing other rovers
+//                }
             }
         } catch (Exception e) {
             System.err.println("Error during execution: " + e.getMessage());

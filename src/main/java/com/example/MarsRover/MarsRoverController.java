@@ -5,7 +5,11 @@ import java.util.List;
 
 public class MarsRoverController {
     private List<MarsRover> rovers = new ArrayList<>();
+    private boolean isCollision = false;
 
+    public boolean isCollisionExecution() {
+        return isCollision;
+    }
 
     public void initializeRover(int x, int y, Direction direction) {
         MarsRover rover = new MarsRover(x, y, direction);
@@ -34,6 +38,7 @@ public class MarsRoverController {
                 System.out.println("Collision detected. Stopping rover.");
                 rover.setX(initialX);
                 rover.setY(initialY);
+                isCollision = true;
                 break; // Stop executing commands for this rover
             }
         }
